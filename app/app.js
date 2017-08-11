@@ -1,4 +1,4 @@
-// begin AltSheets changes
+'// begin AltSheets changes
 ///////////////////////////////
 // TODO: Put go into a config.js
 // But how to include a file from local?
@@ -106,9 +106,11 @@ angular.module('ethExplorer', ['ngRoute','ui.bootstrap','filters','ngSanitize'])
             var now = new Date().getTime();
             while(new Date().getTime() < now + sleepDuration){ /* do nothing */ }
         }
+/*
         var connected = false;
         if(!web3.isConnected()) {
             $('#connectwarning').modal({keyboard:false,backdrop:'static'})
             $('#connectwarning').modal('show')
         }
+*/
     });

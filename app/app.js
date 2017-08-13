@@ -94,18 +94,12 @@ angular.module('ethExplorer', ['ngRoute','ui.bootstrap','filters','ngSanitize'])
             //$locationProvider.html5Mode(true);
     }])
     .run(function($rootScope) {
-        var web3 = require('web3');
-
-        // begin AltSheets changes
-        web3.setProvider(new web3.providers.HttpProvider("http://"+GETH_HOSTNAME+":"+GETH_RPCPORT));
-        // end AltSheets changes
-
+	var Web3 = require('web3');
+	var web3 = new Web3(new Web3.providers.HttpProvider("http://" + GETH_HOSTNAME + ":" + GETH_RPCPORT));	
         $rootScope.web3=web3;
-        // MetaMask injects its own web3 instance in all pages, override it
-        // as it might be not compatible with the one used here
-        if (window.web3)
-            window.web3 = web3;
-        function sleepFor( sleepDuration ){
+        window.web3 = web3;
+        
+	function sleepFor( sleepDuration ){
             var now = new Date().getTime();
             while(new Date().getTime() < now + sleepDuration){ /* do nothing */ }
         }

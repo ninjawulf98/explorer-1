@@ -5,7 +5,7 @@
 
 var GETH_HOSTNAME	= "{GETH_HOSTNAME}";	// put your IP address!
 var GETH_RPCPORT	= {GETH_RPCPORT}; 	// for geth --rpcport GETH_RPCPORT
-var GETH_PROTOCOL       = {GETH_PROTOCOL};
+var GETH_PROTOCOL       = "{GETH_PROTOCOL}";
 
 /*
 var GETH_HOSTNAME	= "testnet.carechain.io";	// put your IP address!

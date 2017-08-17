@@ -5,9 +5,13 @@
 
 var GETH_HOSTNAME	= "{GETH_HOSTNAME}";	// put your IP address!
 var GETH_RPCPORT	= {GETH_RPCPORT}; 	// for geth --rpcport GETH_RPCPORT
+var GETH_PROTOCOL       = {GETH_PROTOCOL};
 
-// var GETH_HOSTNAME	= "localhost";	// put your IP address!
-// var GETH_RPCPORT	= 8545; 	// for geth --rpcport GETH_RPCPORT
+/*
+var GETH_HOSTNAME	= "testnet.carechain.io";	// put your IP address!
+var GETH_RPCPORT	= 8545; 	// for geth --rpcport GETH_RPCPORT
+var GETH_PROTOCOL       = "https";      
+*/
 
 var APP_HOSTNAME 	= "See package.json --> scripts --> start: Change 'localhost'!!!";
 var APP_PORT 		= "See package.json --> scripts --> start: Perhaps change '8000'";
@@ -95,7 +99,7 @@ angular.module('ethExplorer', ['ngRoute','ui.bootstrap','filters','ngSanitize'])
     }])
     .run(function($rootScope) {
 	var Web3 = require('web3');
-	var web3 = new Web3(new Web3.providers.HttpProvider("http://" + GETH_HOSTNAME + ":" + GETH_RPCPORT));	
+	var web3 = new Web3(new Web3.providers.HttpProvider(GETH_PROTOCOL + "://" + GETH_HOSTNAME + ":" + GETH_RPCPORT));	
         $rootScope.web3=web3;
         window.web3 = web3;
         
